@@ -8,10 +8,14 @@ body {
 }
 
 a{
+    display:flex;
+    flex-flow: column wrap;
     text-decoration: none;
+    width: 70%;
+    margin-bottom: 1rem;
     font-family: sans-serif;
-    padding: 3rem 6rem;
-    font-size: 3.2rem;
+    padding: 1rem 4rem;
+    font-size: 3rem;
     border: 0.5rem solid;  
     position: relative;
     /*Oculta el recuadro amarillo que se decalra en el before*/
@@ -20,7 +24,7 @@ a{
 }
 
 a::before {
-    content: '♥';
+    content: '';
     position: absolute;
     left:0;
     top:0;
@@ -37,6 +41,7 @@ a::before {
 }
 
 #first-btn::before {
+    content: '♥';
     background-color: #fff200;
     transform-origin: bottom right;
     transform: rotate(-90deg);
@@ -68,4 +73,45 @@ a::before {
 #second-btn:hover::before{
     transform: translateX(0);
     color: #ffffff;
+}
+
+/*3rd button -*/
+
+#third-btn {
+    color: #262626;
+    letter-spacing: 2px;
+    border-color: #262626;
+    transition: 1s;
+}
+
+#third-btn::before {
+    background-color: #262626;
+    transition: 1s;
+    transform: rotateX(90deg);
+}
+
+#third-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    transition: 1s;
+    transform: rotateY(90deg);
+    z-index: -1;
+
+}
+
+#third-btn:hover {
+    color: #ffffff;
+}
+
+#third-btn:hover::before {
+    transform: rotateX(0);
+}
+
+#third-btn:hover::after {
+    transform: rotateY(0);
 }
