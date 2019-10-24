@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#first-btn {
+    text-decoration: none;
+    color:#272727;
+    font-family: sans-serif;
+    border: 0.5rem solid #272727;
+    padding: 3rem 6rem;
+    position: relative;
+    font-size: 3.2rem;
+
+    /*Oculta el recuadro amarillo que se decalra en el before*/
+    overflow: hidden;
+}
+
+#first-btn:before {
+    content: '♥';
+    position: absolute;
+    left:0;
+    top:0;
+    background-color: #fff200;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform-origin: bottom right;
+    transform: rotate(-90deg);
+    transition: transform 1s;
+}
+
+#first-btn:hover:before {
+    transform: rotate(0deg);
+}
