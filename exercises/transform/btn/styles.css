@@ -1,37 +1,71 @@
 body {
+    width:1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
 }
 
-#first-btn {
+a{
     text-decoration: none;
-    color:#272727;
     font-family: sans-serif;
-    border: 0.5rem solid #272727;
     padding: 3rem 6rem;
-    position: relative;
     font-size: 3.2rem;
-
+    border: 0.5rem solid;  
+    position: relative;
     /*Oculta el recuadro amarillo que se decalra en el before*/
     overflow: hidden;
+    
 }
 
-#first-btn:before {
+a::before {
     content: '♥';
     position: absolute;
     left:0;
     top:0;
-    background-color: #fff200;
     height: 100%;
     width: 100%;
     z-index: -1;
+}
+/*1rst button -Rotate effect*/
+
+#first-btn {
+    color:#272727;
+    border-color:  #272727;
+
+}
+
+#first-btn::before {
+    background-color: #fff200;
     transform-origin: bottom right;
     transform: rotate(-90deg);
     transition: transform 1s;
 }
 
-#first-btn:hover:before {
+#first-btn:hover::before {
     transform: rotate(0deg);
+}
+
+/*2nd button - Swipe effect*/
+
+#second-btn {
+    border-color: #351435;
+    color: #351435;
+    transition: all 1s;
+}
+
+#second-btn::before {
+    background-color: #351435;
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+#second-btn:hover {
+    color: white;
+}
+
+#second-btn:hover::before{
+    transform: translateX(0);
+    color: #ffffff;
 }
