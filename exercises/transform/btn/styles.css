@@ -1,3 +1,10 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
     width:1200px;
     margin: 0 auto;
@@ -12,11 +19,11 @@ a{
     text-align: center;
     flex-flow: column wrap;
     text-decoration: none;
-    width: 70%;
-    margin-bottom: 1rem;
+    width: 90%;
+    margin: 1rem auto;
     font-family: sans-serif;
     padding: 1rem 4rem;
-    font-size: 3rem;
+    font-size: 2rem;
     border: 0.5rem solid;  
     position: relative;
     /*Oculta el recuadro amarillo que se decalra en el before*/
@@ -135,5 +142,32 @@ a::before {
     font-weight: 700;
     letter-spacing: .8rem;
     border: 7px rem;
+}
+
+/*5th button*/
+#bg-color5 {
+    background-color: #262626;
+    padding: 2rem;
+}
+#fifth-btn {
+    border-color: white;
+    color:white;
+    transition: all 1s;
+}
+
+#fifth-btn::before {
+    content: 'YEAH!';
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    background-color: #e1332d;
+    color:white;
+    transform: translateY(-100%);
+    transition: all 1s;
+    z-index: 1;
+}
+
+#fifth-btn:hover::before {
+    transform: translateY(0);
 }
 
