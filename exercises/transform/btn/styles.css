@@ -180,7 +180,7 @@ a::before {
 }
 
 #sixth-btn:hover {
-    background-color: #e1332d;
+    background-color: #902de1;
 }
 
 #sixth-btn::before {
@@ -196,3 +196,49 @@ a::before {
     transform: translateX(100%) rotate(45deg);
 }
 
+/*7th btn*/
+
+#seveth-btn {
+    color: #262626;
+    background-color: #262626;
+    border: 0.3rem solid #262626;
+    transition: all 0.5s;
+}
+
+#seveth-btn::before {
+    content: 'Hover me';
+    background-color: #fffa65;
+    color: #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3rem solid #262626;
+    transition: all 0.5s;
+    z-index: 1;
+}
+
+#seveth-btn::after {
+    content: 'Hover me';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fffa65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.3rem solid #262626; 
+    color: #262626;
+    transition: all 0.5s;
+    transform: translate(-100%, 100%);
+    z-index: 1;
+}
+
+#seveth-btn:hover::before {
+    transform: translate(100%, -100%);
+}
+
+#seveth-btn:hover::after {
+    transform: translate(0,0);
+}
