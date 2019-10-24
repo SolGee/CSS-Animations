@@ -11,7 +11,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100vh;
+    
 }
 
 a{
@@ -241,4 +241,30 @@ a::before {
 
 #seveth-btn:hover::after {
     transform: translate(0,0);
+}
+
+/*8th button*/
+
+#eigth-btn {
+    color: #262626;
+    transition: all 0.5s;
+    border-color: #262626;
+}
+
+#eigth-btn::before {
+    content: 'Hover me';
+    background-color: #262626;
+    color: white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(5);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#eigth-btn:hover::before {
+    transform: scale(1);
+    opacity: 1;
 }
