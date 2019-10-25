@@ -1,53 +1,57 @@
 html {
     box-sizing: border-box;
-  }
-  *, *:before, *:after {
+}
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-  }
+}
 
 body {
-    width:1200px;
+    width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
-a{
-    display:flex;
+a,
+button {
+    display: flex;
     text-align: center;
     flex-flow: column wrap;
     text-decoration: none;
     width: 90%;
+    cursor: pointer;
     margin: 1rem auto;
     font-family: sans-serif;
     padding: 1rem 4rem;
     font-size: 2rem;
-    border: 0.5rem solid;  
+    border: 0.5rem solid;
     position: relative;
     /*Oculta el recuadro amarillo que se decalra en el before*/
     overflow: hidden;
-    
 }
 
-a::before {
+a::before,
+button::before {
     content: '';
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     height: 100%;
     width: 100%;
-
     /*Sobrepone o manda hacia atras el elemento que posea esta propiedad */
     z-index: -1;
 }
+
+
 /*1rst button -Rotate effect*/
 
 #first-btn {
-    color:#272727;
-    border-color:  #272727;
-
+    color: #272727;
+    border-color: #272727;
 }
 
 #first-btn::before {
@@ -61,6 +65,7 @@ a::before {
 #first-btn:hover::before {
     transform: rotate(0deg);
 }
+
 
 /*2nd button - Swipe effect*/
 
@@ -80,10 +85,11 @@ a::before {
     color: white;
 }
 
-#second-btn:hover::before{
+#second-btn:hover::before {
     transform: translateX(0);
     color: #ffffff;
 }
+
 
 /*3rd button*/
 
@@ -111,7 +117,6 @@ a::before {
     transition: 1s;
     transform: rotateY(90deg);
     z-index: -1;
-
 }
 
 #third-btn:hover {
@@ -125,6 +130,7 @@ a::before {
 #third-btn:hover::after {
     transform: rotateY(0);
 }
+
 
 /*4th button*/
 
@@ -144,24 +150,27 @@ a::before {
     border: 7px rem;
 }
 
+
 /*5th button*/
+
 #bg-color5 {
     background-color: #262626;
     padding: 2rem;
 }
+
 #fifth-btn {
     border-color: white;
-    color:white;
+    color: white;
     transition: all 1s;
 }
 
 #fifth-btn::before {
     content: 'YEAH!';
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     background-color: #e1332d;
-    color:white;
+    color: white;
     transform: translateY(-100%);
     transition: all 1s;
     z-index: 1;
@@ -170,6 +179,7 @@ a::before {
 #fifth-btn:hover::before {
     transform: translateY(0);
 }
+
 
 /*Sixth button*/
 
@@ -185,7 +195,7 @@ a::before {
 
 #sixth-btn::before {
     transition: all 0.3s;
-    background-color:rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
     width: 150%;
     height: 20px;
     transform: translateX(-100%) rotate(45deg);
@@ -195,6 +205,7 @@ a::before {
 #sixth-btn:hover::before {
     transform: translateX(100%) rotate(45deg);
 }
+
 
 /*7th btn*/
 
@@ -228,7 +239,7 @@ a::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.3rem solid #262626; 
+    border: 0.3rem solid #262626;
     color: #262626;
     transition: all 0.5s;
     transform: translate(-100%, 100%);
@@ -240,8 +251,9 @@ a::before {
 }
 
 #seveth-btn:hover::after {
-    transform: translate(0,0);
+    transform: translate(0, 0);
 }
+
 
 /*8th button*/
 
@@ -267,4 +279,30 @@ a::before {
 #eigth-btn:hover::before {
     transform: scale(1);
     opacity: 1;
+}
+
+
+/*9th button*/
+
+#nineth-btn {
+    border-color: none;
+    background: none;
+    color: tomato;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+
+#nineth-btn::before {
+    background-color: tomato;
+    border-radius: 0 0 50% 50%;
+    height: 0%;
+    transition: all 0.5s;
+}
+
+#nineth-btn:hover {
+    color: white;
+}
+
+#nineth-btn:hover::before {
+    height: 190%;
 }
