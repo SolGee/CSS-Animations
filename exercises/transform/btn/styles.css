@@ -46,6 +46,16 @@ button::before {
     z-index: -1;
 }
 
+button::before,
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
 
 /*1rst button -Rotate effect*/
 
@@ -348,4 +358,49 @@ button::before {
     transform-origin: bottom;
     transition: all 0.5s;
     transition-delay: 0.25s;
+}
+
+
+/* 11th Button */
+
+#eleventh-btn {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    border-color: #ff0;
+    color: transparent;
+    overflow: visible;
+}
+
+#eleventh-btn::before {
+    content: 'Button';
+    background-color: #363636;
+    color: #ff0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+#eleventh-btn::after {
+    content: 'Button';
+    background-color: #363636;
+    color: #ff0;
+    left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+    transform: scale(0) rotateY(0deg);
+}
+
+#eleventh-btn:hover::before {
+    left: 100%;
+    transform: scale(0) rotateY(360deg);
+    opacity: 0;
+}
+
+#eleventh-btn:hover::after {
+    left: 0%;
+    transform: scale(1) rotateY(360deg);
+    opacity: 1;
 }
