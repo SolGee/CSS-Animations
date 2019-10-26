@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Lato, sans-serif;
+    background-color: #262626;
 }
 
 main {
@@ -161,4 +162,17 @@ section:hover article {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.3s;
+}
+
+
+/*5th container*/
+
+.container-5 {
+    border: 5px solid white;
+    transition: all 0.5rem;
+}
+
+.container-5:hover img {
+    transform: scale(2) rotate(-25deg);
+    transform-origin: 20%, 30%;
 }
