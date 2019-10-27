@@ -8,32 +8,48 @@ section {
     margin: 1rem;
 }
 
+
+/* 1st*/
+
 #first {
-    background-color: palevioletred;
+    background-color: orange;
+    animation-name: first;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    /* animation-delay: 3s; */
+    animation-iteration-count: 2;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate-reverse;
 }
 
+
+/*
 #first:hover {
-    animation: first 3s;
-}
-
-#second {
-    background-color: crimson;
-}
-
-#second:hover {
-    animation: second 3s;
-}
+}*/
 
 
 /*Keywords-method --- 2 stages*/
 
 @keyframes first {
     from {
-        transform: translateX(0);
+        transform: translateX(500px);
     }
     to {
         transform: translateX(1000px);
     }
+}
+
+
+/* 2nd */
+
+#second {
+    background-color: crimson;
+    animation-name: second;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+    animation-direction: alternate;
 }
 
 
@@ -43,10 +59,33 @@ section {
     0% {
         transform: translateX(0);
     }
-    10% {
-        transform: translateX(500px);
+    40% {
+        transform: translateX(200px);
     }
     100% {
-        transform: translate(500px, 500px);
+        transform: translate(200px, 200px);
+    }
+}
+
+
+/* 3rd */
+
+#third {
+    background-color: darkcyan;
+    animation: third 3s ease-out infinite alternate-reverse forwards 0s;
+}
+
+
+/* Diagonal */
+
+@keyframes third {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translate(500px, -200px);
     }
 }
