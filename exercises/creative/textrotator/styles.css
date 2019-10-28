@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #340c4e;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+}
+
+span:before {
+    content: 'TRANSITIONS';
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f15424;
+    animation: word-switch 3s infinite;
+}
+
+@keyframes word-switch {
+    0% {
+        content: 'TRANSITIONS'
+    }
+    50% {
+        content: 'ANIMATIONS'
+    }
+    100% {
+        content: 'TRANSFORMS';
+    }
+}
