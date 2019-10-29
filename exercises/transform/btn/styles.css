@@ -1,406 +1,446 @@
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
-
-body {
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-a,
-button {
-    display: flex;
-    text-align: center;
-    flex-flow: column wrap;
-    text-decoration: none;
-    width: 90%;
-    cursor: pointer;
-    margin: 1rem auto;
-    font-family: sans-serif;
-    padding: 1rem 4rem;
-    font-size: 2rem;
-    border: 0.5rem solid;
-    position: relative;
-    /*Oculta el recuadro amarillo que se decalra en el before*/
-    overflow: hidden;
-}
-
-a::before,
-button::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    /*Sobrepone o manda hacia atras el elemento que posea esta propiedad */
-    z-index: -1;
-}
-
-button::before,
-a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-}
-
-
-/*1rst button -Rotate effect*/
-
-#first-btn {
-    color: #272727;
-    border-color: #272727;
-}
-
-#first-btn::before {
-    content: '♥';
-    background-color: #fff200;
-    transform-origin: bottom right;
-    transform: rotate(-90deg);
-    transition: transform 1s;
-}
-
-#first-btn:hover::before {
-    transform: rotate(0deg);
-}
-
-
-/*2nd button - Swipe effect*/
-
-#second-btn {
-    border-color: #351435;
-    color: #351435;
-    transition: all 1s;
-}
-
-#second-btn::before {
-    background-color: #351435;
-    transform: translateX(-100%);
-    transition: all 1s;
-}
-
-#second-btn:hover {
-    color: white;
-}
-
-#second-btn:hover::before {
-    transform: translateX(0);
-    color: #ffffff;
-}
-
-
-/*3rd button*/
-
-#third-btn {
-    color: #262626;
-    letter-spacing: 2px;
-    border-color: #262626;
-    transition: 1s;
-}
-
-#third-btn::before {
-    background-color: #262626;
-    transition: 1s;
-    transform: rotateX(90deg);
-}
-
-#third-btn::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #262626;
-    transition: 1s;
-    transform: rotateY(90deg);
-    z-index: -1;
-}
-
-#third-btn:hover {
-    color: #ffffff;
-}
-
-#third-btn:hover::before {
-    transform: rotateX(0);
-}
-
-#third-btn:hover::after {
-    transform: rotateY(0);
-}
-
-
-/*4th button*/
-
-#fourth-btn {
-    color: #e1332d;
-    border-color: #e1332d;
-    text-transform: uppercase;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 300;
-    letter-spacing: -2px;
-    transition: all 0.5s;
-}
-
-#fourth-btn:hover {
-    font-weight: 700;
-    letter-spacing: .8rem;
-    border: 7px rem;
-}
-
-
-/*5th button*/
-
-#bg-color5 {
-    background-color: #262626;
-    padding: 2rem;
-}
-
-#fifth-btn {
-    border-color: white;
-    color: white;
-    transition: all 1s;
-}
-
-#fifth-btn::before {
-    content: 'YEAH!';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #e1332d;
-    color: white;
-    transform: translateY(-100%);
-    transition: all 1s;
-    z-index: 1;
-}
-
-#fifth-btn:hover::before {
-    transform: translateY(0);
-}
-
-
-/*Sixth button*/
-
-#sixth-btn {
-    color: white;
-    border-color: white;
-    transition: all 0.3s;
-}
-
-#sixth-btn:hover {
-    background-color: #902de1;
-}
-
-#sixth-btn::before {
-    transition: all 0.3s;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 150%;
-    height: 20px;
-    transform: translateX(-100%) rotate(45deg);
-    z-index: 1;
-}
-
-#sixth-btn:hover::before {
-    transform: translateX(100%) rotate(45deg);
-}
-
-
-/*7th btn*/
-
-#seveth-btn {
-    color: #262626;
-    background-color: #262626;
-    border: 0.3rem solid #262626;
-    transition: all 0.5s;
-}
-
-#seveth-btn::before {
-    content: 'Hover me';
-    background-color: #fffa65;
-    color: #262626;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.3rem solid #262626;
-    transition: all 0.5s;
-    z-index: 1;
-}
-
-#seveth-btn::after {
-    content: 'Hover me';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: #fffa65;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.3rem solid #262626;
-    color: #262626;
-    transition: all 0.5s;
-    transform: translate(-100%, 100%);
-    z-index: 1;
-}
-
-#seveth-btn:hover::before {
-    transform: translate(100%, -100%);
-}
-
-#seveth-btn:hover::after {
-    transform: translate(0, 0);
-}
-
-
-/*8th button*/
-
-#eigth-btn {
-    color: #262626;
-    transition: all 0.5s;
-    border-color: #262626;
-}
-
-#eigth-btn::before {
-    content: 'Hover me';
-    background-color: #262626;
-    color: white;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: scale(5);
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-#eigth-btn:hover::before {
-    transform: scale(1);
-    opacity: 1;
-}
-
-
-/*9th button*/
-
-#nineth-btn {
-    border-color: none;
-    background: none;
-    color: tomato;
-    transition: all 0.5s;
-    text-transform: uppercase;
-}
-
-#nineth-btn::before {
-    background-color: tomato;
-    border-radius: 0 0 50% 50%;
-    height: 0%;
-    transition: all 0.5s;
-}
-
-#nineth-btn:hover {
-    color: white;
-}
-
-#nineth-btn:hover::before {
-    height: 190%;
-}
-
-
-/*10th button*/
-
-#tenth-btn {
-    background-color: #f1c40f;
-    color: white;
-    letter-spacing: 2px;
-}
-
-#tenth-btn::before {
-    content: 'Button';
-    background-color: #2ce771;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotateX(270deg);
-    transform-origin: top;
-    transition: all 0.5s;
-    z-index: 0;
-}
-
-#tenth-btn:hover::before,
-#tenth-btn:hover::after {
-    transform: rotateX(0deg);
-}
-
-#tenth-btn::after {
-    content: "Button";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: rotateX(270deg);
-    transform-origin: bottom;
-    transition: all 0.5s;
-    transition-delay: 0.25s;
-}
-
-
-/* 11th Button */
-
-#eleventh-btn {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    border-color: #ff0;
-    color: transparent;
-    overflow: visible;
-}
-
-#eleventh-btn::before {
-    content: 'Button';
-    background-color: #363636;
-    color: #ff0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-}
-
-#eleventh-btn::after {
-    content: 'Button';
-    background-color: #363636;
-    color: #ff0;
-    left: -100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
-    transform: scale(0) rotateY(0deg);
-}
-
-#eleventh-btn:hover::before {
-    left: 100%;
-    transform: scale(0) rotateY(360deg);
-    opacity: 0;
-}
-
-#eleventh-btn:hover::after {
-    left: 0%;
-    transform: scale(1) rotateY(360deg);
-    opacity: 1;
-}
+    html {
+        box-sizing: border-box;
+    }
+    
+    *,
+    *:before,
+    *:after {
+        box-sizing: inherit;
+    }
+    
+    body {
+        width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    a,
+    button {
+        display: flex;
+        text-align: center;
+        flex-flow: column wrap;
+        text-decoration: none;
+        width: 90%;
+        cursor: pointer;
+        margin: 1rem auto;
+        font-family: sans-serif;
+        padding: 1rem 4rem;
+        font-size: 2rem;
+        border: 0.5rem solid;
+        position: relative;
+        /*Oculta el recuadro amarillo que se decalra en el before*/
+        overflow: hidden;
+    }
+    
+    a::before,
+    button::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        /*Sobrepone o manda hacia atras el elemento que posea esta propiedad */
+        z-index: -1;
+    }
+    
+    button::before,
+    a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+    }
+    /*1rst button -Rotate effect*/
+    
+    #first-btn {
+        color: #272727;
+        border-color: #272727;
+    }
+    
+    #first-btn::before {
+        content: '♥';
+        background-color: #fff200;
+        transform-origin: bottom right;
+        transform: rotate(-90deg);
+        transition: transform 1s;
+    }
+    
+    #first-btn:hover::before {
+        transform: rotate(0deg);
+    }
+    /*2nd button - Swipe effect*/
+    
+    #second-btn {
+        border-color: #351435;
+        color: #351435;
+        transition: all 1s;
+    }
+    
+    #second-btn::before {
+        background-color: #351435;
+        transform: translateX(-100%);
+        transition: all 1s;
+    }
+    
+    #second-btn:hover {
+        color: white;
+    }
+    
+    #second-btn:hover::before {
+        transform: translateX(0);
+        color: #ffffff;
+    }
+    /*3rd button*/
+    
+    #third-btn {
+        color: #262626;
+        letter-spacing: 2px;
+        border-color: #262626;
+        transition: 1s;
+    }
+    
+    #third-btn::before {
+        background-color: #262626;
+        transition: 1s;
+        transform: rotateX(90deg);
+    }
+    
+    #third-btn::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transition: 1s;
+        transform: rotateY(90deg);
+        z-index: -1;
+    }
+    
+    #third-btn:hover {
+        color: #ffffff;
+    }
+    
+    #third-btn:hover::before {
+        transform: rotateX(0);
+    }
+    
+    #third-btn:hover::after {
+        transform: rotateY(0);
+    }
+    /*4th button*/
+    
+    #fourth-btn {
+        color: #e1332d;
+        border-color: #e1332d;
+        text-transform: uppercase;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 300;
+        letter-spacing: -2px;
+        transition: all 0.5s;
+    }
+    
+    #fourth-btn:hover {
+        font-weight: 700;
+        letter-spacing: .8rem;
+        border: 7px rem;
+    }
+    /*5th button*/
+    
+    #bg-color5 {
+        background-color: #262626;
+        padding: 2rem;
+    }
+    
+    #fifth-btn {
+        border-color: white;
+        color: white;
+        transition: all 1s;
+    }
+    
+    #fifth-btn::before {
+        content: 'YEAH!';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e1332d;
+        color: white;
+        transform: translateY(-100%);
+        transition: all 1s;
+        z-index: 1;
+    }
+    
+    #fifth-btn:hover::before {
+        transform: translateY(0);
+    }
+    /*Sixth button*/
+    
+    #sixth-btn {
+        color: white;
+        border-color: white;
+        transition: all 0.3s;
+    }
+    
+    #sixth-btn:hover {
+        background-color: #902de1;
+    }
+    
+    #sixth-btn::before {
+        transition: all 0.3s;
+        background-color: rgba(255, 255, 255, 0.2);
+        width: 150%;
+        height: 20px;
+        transform: translateX(-100%) rotate(45deg);
+        z-index: 1;
+    }
+    
+    #sixth-btn:hover::before {
+        transform: translateX(100%) rotate(45deg);
+    }
+    /*7th btn*/
+    
+    #seveth-btn {
+        color: #262626;
+        background-color: #262626;
+        border: 0.3rem solid #262626;
+        transition: all 0.5s;
+    }
+    
+    #seveth-btn::before {
+        content: 'Hover me';
+        background-color: #fffa65;
+        color: #262626;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.3rem solid #262626;
+        transition: all 0.5s;
+        z-index: 1;
+    }
+    
+    #seveth-btn::after {
+        content: 'Hover me';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #fffa65;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.3rem solid #262626;
+        color: #262626;
+        transition: all 0.5s;
+        transform: translate(-100%, 100%);
+        z-index: 1;
+    }
+    
+    #seveth-btn:hover::before {
+        transform: translate(100%, -100%);
+    }
+    
+    #seveth-btn:hover::after {
+        transform: translate(0, 0);
+    }
+    /*8th button*/
+    
+    #eigth-btn {
+        color: #262626;
+        transition: all 0.5s;
+        border-color: #262626;
+    }
+    
+    #eigth-btn::before {
+        content: 'Hover me';
+        background-color: #262626;
+        color: white;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(5);
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    
+    #eigth-btn:hover::before {
+        transform: scale(1);
+        opacity: 1;
+    }
+    /*9th button*/
+    
+    #nineth-btn {
+        border-color: none;
+        background: none;
+        color: tomato;
+        transition: all 0.5s;
+        text-transform: uppercase;
+    }
+    
+    #nineth-btn::before {
+        background-color: tomato;
+        border-radius: 0 0 50% 50%;
+        height: 0%;
+        transition: all 0.5s;
+    }
+    
+    #nineth-btn:hover {
+        color: white;
+    }
+    
+    #nineth-btn:hover::before {
+        height: 190%;
+    }
+    /*10th button*/
+    
+    #tenth-btn {
+        background-color: #f1c40f;
+        color: white;
+        letter-spacing: 2px;
+    }
+    
+    #tenth-btn::before {
+        content: 'Button';
+        background-color: #2ce771;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(270deg);
+        transform-origin: top;
+        transition: all 0.5s;
+        z-index: 0;
+    }
+    
+    #tenth-btn:hover::before,
+    #tenth-btn:hover::after {
+        transform: rotateX(0deg);
+    }
+    
+    #tenth-btn::after {
+        content: "Button";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(270deg);
+        transform-origin: bottom;
+        transition: all 0.5s;
+        transition-delay: 0.25s;
+    }
+    /* 11th Button */
+    
+    #eleventh-btn {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        border-color: #ff0;
+        color: transparent;
+        overflow: visible;
+    }
+    
+    #eleventh-btn::before {
+        content: 'Button';
+        background-color: #363636;
+        color: #ff0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+    }
+    
+    #eleventh-btn::after {
+        content: 'Button';
+        background-color: #363636;
+        color: #ff0;
+        left: -100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s;
+        transform: scale(0) rotateY(0deg);
+    }
+    
+    #eleventh-btn:hover::before {
+        left: 100%;
+        transform: scale(0) rotateY(360deg);
+        opacity: 0;
+    }
+    
+    #eleventh-btn:hover::after {
+        left: 0%;
+        transform: scale(1) rotateY(360deg);
+        opacity: 1;
+    }
+    /* 12 button */
+    
+    #twelveth-btn {
+        border-color: white;
+        transition: all 0.3s;
+        color: white;
+    }
+    
+    #twelveth-btn:hover {
+        border-color: #f44336;
+        color: #ff4444;
+        animation: shake 0.3s linear 1;
+    }
+    
+    @keyframes shake {
+        33% {
+            transform: rotate(10deg);
+        }
+        66% {
+            transform: rotate(-10deg);
+        }
+        100% {
+            transform: rotate(10deg);
+        }
+    }
+    /* 13th button */
+    
+    #thirteenth-btn {
+        border-color: #262626;
+        color: #262626;
+        transition: all 0.5s;
+    }
+    
+    #thirteenth-btn:hover {
+        color: white;
+        transition: all 0.5s;
+    }
+    
+    #thirteenth-btn::before {
+        width: 120px;
+        height: 100%;
+        background-color: #f44336;
+        transform: skew(-15deg);
+        animation: moving 1.2s linear infinite;
+        transition: all 0.5s;
+    }
+    
+    @keyframes moving {
+        from {
+            left: -120px;
+        }
+        to {
+            left: 100%;
+        }
+    }
+    
+    #thirteenth-btn:hover::before {
+        width: 100%;
+        height: 100%;
+        transform: skew(0deg);
+        animation: none;
+    }
